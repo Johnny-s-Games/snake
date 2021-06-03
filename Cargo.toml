@@ -1,5 +1,5 @@
 [package]
-name = "SnakeBobby"
+name = "snakebobby"
 version = "0.1.0"
 authors = ["gloubix"]
 edition = "2018"
