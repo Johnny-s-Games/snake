@@ -1,6 +1,5 @@
 name: publish
 
-
 on:
   push:
     tags:
@@ -30,3 +29,4 @@ jobs:
         file: target/release/snakebobby*
         tag: ${{ github.ref }}
         file_glob: true
+        overwrite: true
