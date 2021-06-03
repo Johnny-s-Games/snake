@@ -1,4 +1,4 @@
-[![Rust](https://github.com/Johnny-s-Games/snake/actions/workflows/rust.yml/badge.svg)](https://github.com/Johnny-s-Games/snake/actions/workflows/rust.yml)
+[![CI](https://github.com/Johnny-s-Games/snake/actions/workflows/CI.yml/badge.svg)](https://github.com/Johnny-s-Games/snake/actions/workflows/CI.yml)
 
 
 # Johnny-s Simple SNAKE in rust
