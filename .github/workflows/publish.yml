@@ -22,11 +22,25 @@ jobs:
       run: cargo build --release --verbose
     - name: Run tests
       run: cargo test --verbose
-    - name: Upload binaries to release
+    - name: Upload app to release
+      if: matrix.platform == 'macos-latest'
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: target/release/snakebobby*
+        file: target/release/snakebobby
+        asset_name: snakebobby.app
         tag: ${{ github.ref }}
-        file_glob: true
-        overwrite: true
+    - name: Upload Windows binary to release
+      if: matrix.platform == 'windows-latest'
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: target/release/snakebobby.exe
+        tag: ${{ github.ref }}
+    - name: Upload ubuntu binary to release
+      if: matrix.platform == 'ubuntu-latest'
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: target/release/snakebobby
+        tag: ${{ github.ref }} 
