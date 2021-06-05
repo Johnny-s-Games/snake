@@ -28,7 +28,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/snakebobby
-        asset_name: snakebobby_macOS
+        asset_name: snakebobby_$tag_macOS
         tag: ${{ github.ref }}
     - name: Upload Windows binary to release
       if: matrix.platform == 'windows-latest'
@@ -36,6 +36,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/snakebobby.exe
+        asset_name: SnakeBobby_$tag.exe
         tag: ${{ github.ref }}
     - name: Upload ubuntu binary to release
       if: matrix.platform == 'ubuntu-latest'
@@ -43,4 +44,5 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/snakebobby
+        asset_name: SnakeBobby_$tag
         tag: ${{ github.ref }} 
